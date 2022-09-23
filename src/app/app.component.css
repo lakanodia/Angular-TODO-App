@@ -1,0 +1,6 @@
+.container {
+  background: #44787dc1;
+  box-shadow: -20px -20px 0px 0px rgba(100, 100, 100, 0.1);
+  padding: 30px;
+  transform: scale(0.8);
+}

@@ -1,0 +1,10 @@
+<div 
+    (click)="onItemDone()"
+    class="task-list-item alternative">
+    <i [ngClass]="item.done ? 'checked' : ''" class="fa-regular fa-circle-check size"></i>
+    <!-- <i [ngClass]="item.done ? 'checked' : ''" class="fa-solid fa-circle-check size"></i> -->
+    <h2 [ngClass]="item.done ? 'done' : ''">{{item.description}}</h2>
+    <button 
+    (click)="onDeleteItem()"
+    class="button">Delete</button>
+</div>
