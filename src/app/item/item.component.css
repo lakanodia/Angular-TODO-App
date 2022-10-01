@@ -11,6 +11,7 @@
     cursor: pointer;
     transition: 0.5s;
     text-align: center;
+    overflow-wrap: anywhere;
 }
 .task-list-item:hover{
     transform: translate(-2%);
