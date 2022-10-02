@@ -16,15 +16,25 @@ export class InputComponent implements OnInit {
 
   ngOnInit(): void {
     this.todoTasks = this.fb.group({
-      todoList : ['', Validators.required]
+      todoList : ['',[Validators.required, Validators.maxLength(20)] ]
     })
 
   }
 
+  get todoList() {
+    return this.todoTasks.get('todoList');
+  } 
+
   onNewItem(inputEl: HTMLInputElement){
-    console.log(inputEl.value);
-    this.itemsService.addItem(inputEl.value);
-    inputEl.value = '';
+    if (this.todoTasks.valid) {
+      console.log(inputEl.value);
+      this.itemsService.addItem(inputEl.value);
+      inputEl.value = '';
+    }else{
+      alert('Please Add ToDo List')
+    }
   }
+
+
 
 }

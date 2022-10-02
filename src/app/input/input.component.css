@@ -81,6 +81,12 @@ form{
     form{
         flex-direction: column;
     }
+    .parent-span{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+    }
     .item-input{
        flex-direction: column;
     }
