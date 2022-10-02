@@ -1,5 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { ItemsService } from '../items.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-input',
@@ -8,15 +9,20 @@ import { ItemsService } from '../items.service';
 })
 export class InputComponent implements OnInit {
 
+  todoTasks : FormGroup;
+  
+  constructor(private itemsService: ItemsService,
+    private fb: FormBuilder) { }
 
-  constructor(private itemsService: ItemsService) { }
+  ngOnInit(): void {
+    this.todoTasks = this.fb.group({
+      todoList : ['', Validators.required]
+    })
 
-  ngOnInit(): void {}
+  }
 
   onNewItem(inputEl: HTMLInputElement){
     console.log(inputEl.value);
-    
-
     this.itemsService.addItem(inputEl.value);
     inputEl.value = '';
   }

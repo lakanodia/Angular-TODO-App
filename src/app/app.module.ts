@@ -10,6 +10,8 @@ import { MatSliderModule } from '@angular/material/slider';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -28,7 +30,9 @@ import {MatInputModule} from '@angular/material/input';
       MatSliderModule,
       MatSlideToggleModule,
       MatButtonModule,
-      MatInputModule
+      MatInputModule,
+      FormsModule,
+      ReactiveFormsModule
    
     ],
   providers: [],

@@ -36,13 +36,21 @@ label{
     margin-bottom: 15px;
 
 }
+.error{
+    border-width: 4px;
+    border-color: #ff0000;
+    border-style: solid;
+    border-radius: 5px;
+}
 .item-input{
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
-
+.span-error{
+    color: rgb(200, 0, 0);
+    font-size: 20px
+}
 form{
     max-width: 800px;
     width: 100%;
@@ -53,6 +61,14 @@ form{
 .todo-title{
     color: white;
     font-size: 40px;
+}
+
+
+.alert div {
+    background-color: #fed3d3;
+    color: #820000;
+    padding: 1rem;
+    margin-bottom: 1rem;
 }
 
 @media (max-width: 770px){

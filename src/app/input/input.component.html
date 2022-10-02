@@ -1,14 +1,30 @@
 <h1 class="todo-title">TODO</h1>
 
 <div class="item-input">
-  <form >
+  <form [formGroup]="todoTasks">
     <div class="input-div">
-      <label for=""> Add to the todo list </label>
+      <label for="todoList"> Add to the todo list </label>
       <div class="input-div">
-        <input #inputEl type="text" />
+        <input
+          [ngClass]="{
+            error:
+              todoTasks.get('todoList').errors &&
+              (todoTasks.get('todoList').touched ||
+                todoTasks.get('todoList').dirty)
+          }"
+          #inputEl
+          type="text"
+          formControlName="todoList"
+        />
+
       </div>
     </div>
-
     <button (click)="onNewItem(inputEl)">Add item</button>
   </form>
 </div>
+<span *ngIf="todoTasks.get('todoList').errors && 
+            (todoTasks.get('todoList').touched ||
+            todoTasks.get('todoList').dirty)">
+    <span *ngIf="todoTasks.get('todoList').errors" class="span-error">ToDo List is Required</span>
+</span>
+
